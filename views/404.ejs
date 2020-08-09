@@ -1,0 +1,14 @@
+<%- include('_head'); -%>
+    <div class="text-centered">
+        <h1 class="neon-red-title">Vous vous êtes fouvoyé</h1>
+        <p>
+            Erreur 404, la page "
+            <span id="path"></span>
+            " n'existe pas</p>
+        <a href="/" class="neon-green neon-green-hover">Retour à l'accueil</a>
+        <script src="/js/neon.js"></script>
+        <script>
+            document.querySelector("#path").innerText = location.pathname
+        </script>
+    </div>
+<%- include('_foot'); -%>

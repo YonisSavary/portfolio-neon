@@ -1,0 +1,48 @@
+.flexbox
+{
+    display: flex;
+}
+
+
+.f-column
+{
+    @extend .flexbox;
+    flex-direction: column;
+}
+
+.f-row
+{
+    @extend .flexbox;
+    flex-direction: row;
+}
+
+.f-centered
+{
+    @extend .flexbox;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-share
+{
+    @extend .flexbox;
+    flex: 1 1 0px;
+}
+
+.f-wrap
+{
+    flex-wrap: wrap;
+}
+
+.f-space-e
+{
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 400px){
+    .f-responsive
+    {
+        display: flex;
+        flex-direction: column;
+    }
+}

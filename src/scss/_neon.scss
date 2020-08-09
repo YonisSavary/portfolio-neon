@@ -1,0 +1,119 @@
+/*
+    CSS By Yonis SAVARY
+    Created on 01/08/2020
+    Last edit on 01/08/2020
+    Contain only the animations and basics properties for the neon effect
+*/
+
+
+// NEON
+@function neon-fg-light($hue){ @return hsl($hue, 100%, 98%); }
+@function neon-fg($hue){ @return  hsl($hue, 100%, 69%); }
+@function neon-fg-dark($hue){ @return  hsl($hue, 100%, 20%); }
+
+@function neon-bg-light($hue){ @return  hsl($hue, 100%, 98%); }
+@function neon-bg($hue){ @return hsl($hue, 100%, 50%); }
+@function neon-bg-dark($hue){ @return  hsl($hue, 84%, 10%); }
+
+@font-face
+{
+    font-family: "LasEnter";
+    src: url("../font/LasEnter.ttf");
+}
+
+$shadow_size : 3rem;
+
+@each $name, $colorHue in $colors {
+
+    @keyframes neon-#{$name}-flicker {
+        0% {
+            color: neon-fg($colorHue);
+            text-shadow: 0px 0px $shadow_size neon-bg($colorHue);
+        }
+        50% {
+            color:  neon-fg-dark($colorHue);
+            text-shadow: 0px 0px 0rem neon-bg-dark($colorHue);
+        }
+        100% {
+            color: neon-fg($colorHue);
+            text-shadow: 0px 0px $shadow_size neon-bg($colorHue);
+        }
+    }
+
+    @keyframes neon-#{$name}-flicker-long {
+        0% {
+            color: neon-fg($colorHue);
+            text-shadow: 0px 0px $shadow_size neon-bg($colorHue);
+        }
+        11% {
+            color:  neon-fg-dark($colorHue);
+            text-shadow: 0px 0px 0rem neon-bg-dark($colorHue);
+        }
+        12% {
+            color: neon-fg($colorHue);
+            text-shadow: 0px 0px $shadow_size neon-bg($colorHue);
+        }
+    }
+
+    .neon-#{$name}
+    {
+        color: neon-fg($colorHue);
+        font-family: "LasEnter";
+        font-size: 1.5rem;
+        text-shadow: 0px 0px $shadow_size neon-bg($colorHue);
+        transition: all 500ms;
+    }
+
+    .neon-hover
+    {
+        cursor: pointer;
+    }
+
+    .neon-#{$name}-hover:hover
+    {
+        color: neon-fg-light($colorHue);
+        text-shadow: 0px 0px 1.3rem neon-bg-light($colorHue);
+    }
+
+    .neon-#{$name}-title
+    {
+        text-decoration: underline;
+        font-family: "LasEnter";
+        font-size: 2rem;
+        color: neon-fg($colorHue);
+        text-shadow: 0px 0px $shadow_size neon-bg($colorHue);
+    }
+
+    .neon-#{$name}-text-input
+    {
+        min-width: 300px;
+        width: 50%;
+        max-width: 700px;
+        font-size: 0.8rem;
+        font-family: sans-serif;
+        background-color: neon-bg-dark($colorHue);
+        color: body-fg($colorHue);
+        border: solid 1px neon-bg-dark($colorHue);
+        padding: 0.2rem;
+        box-shadow: 0rem 0rem 0rem neon-fg($colorHue);
+        transition: box-shadow 100ms;
+    }
+
+    .neon-#{$name}-btn
+    {
+        @extend .neon-#{$name};
+        font-family: "LasEnter";
+        font-size: 1rem;
+        background-color: neon-bg-dark($colorHue);
+        border: solid 1px neon-fg-light($colorHue);
+        border-radius: 0.1rem;
+        padding: 0.3rem 1rem;
+        cursor: pointer;
+    }
+
+    .neon-#{$name}-text-input:hover , .neon-#{$name}-text-input:focus, .neon-#{$name}-btn:hover
+    {
+        box-shadow: 0rem 0rem 0.8rem neon-fg($colorHue);
+        border: solid 1px neon-fg-light($colorHue);
+    }
+}

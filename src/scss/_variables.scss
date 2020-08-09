@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Permanent+Marker&display=swap');
+
+// Time saver ! change the hue to change the color theme
+// others variables are meant to respect this value !
+// https://www.w3schools.com/colors/colors_hsl.asp to see availables hue values
+$hue : 0; // IMPORTANT
+
+$main-font-family : "Kanit";
+
+$body-bg:rgb(12, 12, 12);
+$body-fg:#EEE;
+
+// 'colors' are used in the _neon file, each key define the color name and its hue,
+// so if we put : "yellow" : 55 
+// those classes/keyframes will be created :
+// - neon-#{$name}-flicker (keyframe)
+// - neon-#{$name}-flicker-long (keyframe)
+//
+// - neon-#{$name}  
+// - neon-#{$name}-hover (+hover)
+// - neon-#{$name}-title
+// - neon-#{$name}-text-input (+hover&focus)
+// - neon-#{$name}-btn (+hover)
+//
+// each colors adds a thoses, so try to stay light
+$colors: (
+    "red":5,
+    "green":117,
+    "blue":195
+);

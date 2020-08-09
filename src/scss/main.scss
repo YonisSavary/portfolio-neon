@@ -1,0 +1,107 @@
+@import "variables";    // NEED TO BE THE FIRST IMPORT
+@import "neon";         // NEON ANIMATIONS
+@import "flex";         // CONTAIN "GENERICS" CLASSES ABOUT FLEXBOX (f-row, f-column ...)
+@import "projects";
+
+// MAIN CONTENT
+
+:root 
+{    
+
+    font-family: $main-font-family;
+    font-size: 24px;
+    color: $body-fg;
+}
+
+html, body
+{
+    margin:0px;
+}
+
+body
+{
+    background-color: $body-bg;
+    background-image: url("/img/concrete.png");
+    background-size: 300px;
+    padding: 1rem;
+}
+
+.main-title
+{
+    font-size: 4rem;
+}
+
+.title
+{
+    margin: 3rem 0rem;
+}
+
+.text-left
+{
+    text-align: start;
+}
+
+.text-centered
+{
+    text-align: center;
+}
+
+.text-section
+{
+    width: 80%;
+    margin-left: 10%;
+}
+
+.no-style-link
+{
+    color: $body-fg;
+    text-decoration: none;
+}
+
+label
+{
+    margin-bottom: 0.3rem;
+}
+
+.form-group
+{
+    margin: 1.3rem 0rem;
+    display: flex;
+    flex-direction: column;
+}
+
+textarea
+{
+    height: 5rem;
+}
+
+@media only screen and (max-width:600px){
+    :root
+    {
+        font-size: 16px;
+    }
+
+    .responsive-disappear
+    {
+        display: none;
+    }
+}
+
+.text-input
+{
+    min-width: 300px;
+    width: 50%;
+    max-width: 700px;
+    font-size: 0.8rem;
+    font-family: sans-serif;
+    background-color: $body-bg;
+    color: $body-fg;
+    transition: all 100ms;
+    border: none;
+    padding: 0.2rem;
+}
+
+.text-input:hover , .text-input:focus
+{
+    background-color: lighten($body-bg, 6);
+}
