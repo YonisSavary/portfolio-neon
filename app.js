@@ -27,4 +27,4 @@ app.get('*',(req,res)=>{
     res.render('404')
 })
 
-app.listen(80);
+app.listen(3000);
